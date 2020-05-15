@@ -1,0 +1,199 @@
+#headline1{
+    font-family: "Comic Sans MS", cousive, sans-serif;
+    color: #152238;
+    margin-left: 150px;
+    font-size: 60px;
+}
+body{
+    background-color: lightskyblue;
+}
+div.dice{
+    float:left;
+    width: 68px;
+    background: #AFDCEB;
+    border:#152238 1px solid;
+    padding: 10px;
+    padding-left: 10px;
+    font-size: 24px;
+    text-align: center;
+    margin: 12px;
+}
+#status{
+    clear:left;
+    font-family: "Comic Sans MS", cousive, sans-serif;
+    color: #192841;
+}
+#info{
+    clear:left;
+    font-family: "Comic Sans MS", cousive, sans-serif;
+    color: #192841;
+}
+.button {
+    background-color: #06143d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 18px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px white;
+  }
+.button:hover {
+    background-color: #1f8bb6;
+}
+.button:active {
+    background-color: #1f8bb6;
+    box-shadow: 1px 1px #666;
+    transform: translateY(1px);
+    transform: translateX(1px);
+}
+.containerHold {
+    max-width: 1875px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.containerHold div {
+    margin: 7px; /* distance between checkboxes */
+    margin-left: 0px;
+}
+.containerHold div label {
+    cursor: pointer; /* click either the box or the label */
+}
+.containerHold div label input[type="checkbox"] {
+    display: none; /* display default checkbox */
+}
+.containerHold div label span {
+    position: relative;
+    display: inline-block;
+    background: #003152;
+    padding: 15px 25px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.5);
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 0.1s;
+    user-select: none;
+    overflow: hidden;
+}
+.containerHold div label span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+.containerHold div label input[type="checkbox"]:checked ~ span {
+    background: steelblue;
+    color: #fff;
+}
+caption {
+    text-align: center;
+    font-family: "Comic Sans MS", cousive, sans-serif;
+    font-size: 24px;
+    background-color: #AFDCEB;
+    color: #152238;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: "Comic Sans MS", cousive, sans-serif;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    font-family: "Comic Sans MS", cousive, sans-serif;
+    font-size: 20px;
+    background-color: #AFDCEB;
+    color: #152238;
+  }
+
+#uncheck {
+    background-color: #152238;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 18px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px white;
+  }
+#uncheck:hover {
+    background-color: #1f8bb6;
+}
+#uncheck:active {
+    background-color: #1f8bb6;
+    box-shadow: 1px 1px #666;
+    transform: translateY(1px);
+    transform: translateX(1px);
+}
+
+.containerScore {
+    max-width: 1875px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.containerScore:before {
+    content: "";
+    position: absolute;
+}
+.containerScore label {
+    position: relative;
+    cursor: pointer;
+}
+.containerScore label input {
+    display: none;
+}
+.containerScore label span {
+    position: relative;
+    display: inline-block;
+    margin: 5px 20px;
+    width: 50px;
+    background: #003152;
+    padding: 10px 20px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.5);
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.1s;
+    user-select: none;
+    overflow: hidden;
+    text-align: center;
+}
+.containerScore div label input[type="radio"]:checked ~ span {
+    background: steelblue;
+    color: #fff;
+}
+.containerScore div {
+    margin: 5px; /* distance between checkboxes */
+    margin-left: 0px;
+}
+.containerScore div label span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+.list:hover {
+    background-color: #AFDCEB;
+    color: #152238
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="kniffel.css">
+<script src="kniffel.js">
+    
+</script>
+
+</head>
+
+<body>
+<h1 id="headline1">KNIFFEL</h1>
+<div id="die1" class="dice">0</div>
+<div id="die2" class="dice">0</div>
+<div id="die3" class="dice">0</div>
+<div id="die4" class="dice">0</div>
+<div id="die5" class="dice">0</div>
+<!-- ROLL BUTTON -->
+<button class="button" onclick="rollDice()">Würfeln!</button>
+<!-- RESOLVE BUTTON -->
+<button class="button" onclick="resolve()">Auswerten!</button>
+<p></p>
+<!-- HOLD CHECKBOXES -->
+<div class="containerHold">
+    <div>
+        <label>
+            <input type="checkbox" id="check1" name="checkHold">
+            <span class="list">Halten</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" id="check2" name="checkHold">
+            <span class="list">Halten</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" id="check3" name="checkHold">
+            <span class="list">Halten</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" id="check4" name="checkHold">
+            <span class="list">Halten</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" id="check5" name="checkHold">
+            <span class="list">Halten</span>
+        </label>
+    </div>
+</div>
+<!-- STATUS -->
+<h2 id="status">Würfelergebnis</h2>
+<!-- INFO -->
+<h3 id="info">info</h3>
+<!-- TOP RESOLVE -->
+<div class="containerScore">
+  <div>
+      <label>
+          <input type="radio" id="checkOnes" name="checkTop">
+          <span class="list">1er</span>
+      </label>
+  </div>
+  <div>
+      <label>
+          <input type="radio" id="checkTwos" name="checkTop">
+          <span class="list">2er</span>
+      </label>
+  </div>
+  <div>
+      <label>
+          <input type="radio" id="checkThrees" name="checkTop">
+          <span class="list">3er</span>
+      </label>
+  </div>
+  <div>
+      <label>
+          <input type="radio" id="checkFours" name="checkTop">
+          <span class="list">4er</span>
+      </label>
+  </div>
+  <div>
+      <label>
+          <input type="radio" id="checkFives" name="checkTop">
+          <span class="list">5er</span>
+      </label>
+  </div>
+  <div>
+    <label>
+        <input type="radio" id="checkSixes" name="checkTop">
+        <span class="list">6er</span>
+    </label>
+  </div>
+  <div>
+    <label>
+        <input type="radio" id="checkChance" name="checkTop">
+        <span class="list">Chance</span>
+    </label>
+  </div>
+  <label>
+    <button class="button" id="uncheck" onclick="clearCheckTop()">Auswahl aufheben</button>
+  </label>
+  </div>
+</div>
+<!-- TABLE -->
+<table>
+    <caption>Gewinnkarte</caption>
+    <tr>
+        <th></th>
+        <th></th>
+        <th>Spieler 1</th>
+        <th>Spieler 2</th>
+        <th>Spieler 3</th>
+        <th>Spieler 4</th>
+        <th>Spieler 5</th>
+        <th>Spieler 6</th>
+    </tr>
+    <tr>
+        <td>1er</td>
+        <td>nur 1er zählen</td>
+        <td id="td1erP1">0</td>
+        <td id="td1erP2">0</td>
+      </tr>
+      <tr>
+        <td>2er</td>
+        <td>nur 2er zählen</td>
+        <td id="td2erP1">0</td>
+        <td id="td2erP2">0</td>
+      </tr>
+      <tr>
+        <td>3er</td>
+        <td>nur 3er zählen</td>
+        <td id="td3erP1">0</td>
+        <td id="td3erP2">0</td>
+      </tr>
+      <tr>
+        <td>4er</td>
+        <td>nur 4er zählen</td>
+        <td id="td4erP1">0</td>
+        <td id="td4erP2">0</td>
+      </tr>
+      <tr>
+        <td>5er</td>
+        <td>nur 5er zählen</td>
+        <td id="td5erP1">0</td>
+        <td id="td5erP2">0</td>
+      </tr>
+      <tr>
+        <td>6er</td>
+        <td>nur 6er zählen</td>
+        <td id="td6erP1">0</td>
+        <td id="td6erP2">0</td>
+      </tr>
+      <tr>
+        <td>gesamt</td>
+        <td>&#8594</td>
+        <td id="tdSumTopP1">0</td>
+        <td id="tdSumTopP2">0</td>
+      </tr>
+      <tr>
+        <td>Bonus bei 63 oder mehr</td>
+        <td>+ 35 Punkte</td>
+        <td id="tdBonusP1">0</td>
+        <td id="tdBonusP2">0</td>
+      </tr>
+      <tr>
+        <td>gesamt oberer Teil</td>
+        <td>&#8594</td>
+        <td id="tdTotalTopP1">0</td>
+        <td id="tdTotalTopP2">0</td>
+      </tr>
+      <tr>
+        <td>Dreierpasch</td>
+        <td>alle Augen zählen</td>
+        <td id="tdthreeOfaKindP1">0</td>
+        <td id="tdthreeOfaKindP2">0</td>
+      </tr>
+      <tr>
+        <td>Viererpasch</td>
+        <td>alle Augen zählen</td>
+        <td id="tdfourOfaKindP1">0</td>
+        <td id="tdfourOfaKindP2">0</td>
+      </tr>
+      <tr>
+        <td>Full House</td>
+        <td>25 Punkte</td>
+        <td id="tdfullHouseP1">0</td>
+        <td id="tdfullHouseP2">0</td>
+      </tr>
+      <tr>
+        <td>kleine Straße</td>
+        <td>30 Punkte</td>
+        <td id="tdSmallStraightP1">0</td>
+        <td id="tdSmallStraightP2">0</td>
+      </tr>
+      <tr>
+        <td>große Straße</td>
+        <td>40 Punkte</td>
+        <td id="tdbigStraightP1">0</td>
+        <td id="tdbigStraightP2">0</td>
+      </tr>
+      <tr>
+        <td>Kniffel</td>
+        <td>50 Punkte</td>
+        <td id="tdkniffelP1">0</td>
+        <td id="tdkniffelP2">0</td>
+      </tr>
+      <tr>
+        <td>Chance</td>
+        <td>alle Augen zählen</td>
+        <td id="tdChanceP1">0</td>
+        <td id="tdChanceP2">0</td>
+      </tr>
+      <tr>
+        <td>gesamt unterer Teil</td>
+        <td>&#8594</td>
+        <td id="tdSolutionBottomP1">0</td>
+        <td id="tdSolutionBottomP2">0</td>
+      </tr>
+      <tr>
+        <td>gesamt oberer Teil</td>
+        <td>&#8594</td>
+        <td id="tdSolutionTopP1">0</td>
+        <td id="tdSolutionTopP2">0</td>
+      </tr>
+      <tr>
+        <td>Endsumme</td>
+        <td>&#8594</td>
+        <td id="tdSumTotalP1">0</td>
+        <td id="tdSumTotalP1">0</td>
+      </tr>
+</table>
+</body>
+
+</html>
