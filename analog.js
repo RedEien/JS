@@ -97,3 +97,5 @@ function drawHand(ctx, radius, time, lHand, lwidth) {
     ctx.strokeStyle = "white";
     ctx.stroke();
 }
+draw()
+setInterval(function() {drawClock(ctx, radius)}, 1000);
